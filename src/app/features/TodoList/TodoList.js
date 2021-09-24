@@ -17,7 +17,6 @@ const TodoListExample = () => {
 
   useEffect(() => {
     async function fetchTodos() {
-      debugger;
       let response = await getTodos();
       setTodos(response);
       setIsProcessing("done");
