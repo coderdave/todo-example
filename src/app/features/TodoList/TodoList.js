@@ -1,14 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button, CircularProgress, TextField } from "@mui/material";
-import Delete from "@mui/icons-material/Delete";
 import { getTodos, postTodo, deleteTodo } from "../../services/todosApi";
-
-const rowStyle = {
-  display: "flex",
-  alignItems: "center",
-  width: 250,
-  justifyContent: "space-between",
-};
+import TodoRow from "./components/TodoRow";
 
 const TodoListExample = () => {
   const [isProcessing, setIsProcessing] = useState("loading");
@@ -17,7 +10,6 @@ const TodoListExample = () => {
 
   useEffect(() => {
     async function fetchTodos() {
-      debugger;
       let response = await getTodos();
       setTodos(response);
       setIsProcessing("done");
@@ -52,14 +44,7 @@ const TodoListExample = () => {
       {isProcessing === "done" && (
         <ul>
           {todos.map((todo) => (
-            <li key={todo.id}>
-              <div style={rowStyle}>
-                {todo.action}
-                <Button onClick={() => removeTodo(todo.id)} color="error">
-                  <Delete />
-                </Button>
-              </div>
-            </li>
+            <TodoRow key={todo.id} todo={todo} handleRemoveTodo={removeTodo} />
           ))}
         </ul>
       )}
