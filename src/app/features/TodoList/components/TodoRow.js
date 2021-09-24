@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "@mui/material";
 import Delete from "@mui/icons-material/Delete";
@@ -10,6 +9,7 @@ const rowStyle = {
   justifyContent: "space-between",
 };
 
+// stateless or presentational component
 const TodoRow = (props) => {
   const { todo, handleRemoveTodo } = props;
 
