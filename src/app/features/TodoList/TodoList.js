@@ -17,6 +17,7 @@ import Delete from "@mui/icons-material/Delete";
 import { getTodos, postTodo, deleteTodo } from "../../services/todosApi";
 
 // using react's traditional styling, we will be using "styled-components"
+// notice we don't write CSS like "align-items"
 const rowStyle = {
   display: "flex",
   alignItems: "center",
