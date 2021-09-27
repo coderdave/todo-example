@@ -4,7 +4,11 @@ import "./index.css";
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 
+// this project was bootstrapped with "Create React App"
 ReactDOM.render(
+  // StrictMode is a tool for highlighting potential problems in an application
+  // ie, warning about unsafe lifecycles
+  // (this is only run in dev mode)
   <React.StrictMode>
     <App />
   </React.StrictMode>,
